@@ -1,0 +1,4 @@
+I= imread('C:\Users\Computing\Downloads\skin lesion dataset\org data\ISIC_0000095.jpg');
+level=graythresh(I)
+BW=imbinarize(I,level);
+imshowpair(I,BW,
