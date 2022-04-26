@@ -1,0 +1,36 @@
+clear;close;
+i=imread('C:\Users\Computing\Downloads\ImgPIA.jpg');
+imshow(i);
+
+img= double(i);
+[row,column]=size(img);
+cy=round(row/2);
+cx=round(column/2);
+R=100;
+A=360;
+if exist('R','var') ==0
+    R=min(round(row/2),round(column/2))-1;
+end
+
+if exist('A','var');
+     A=360;
+end
+P_img=[];
+
+for r=0:R
+    j=1;
+    for a=0:2*pi/A:2*pi-2*pi/A
+        P_img(i,j)= img(cy+round(r*sin(a)),cx+eound(r*cos(a)));
+        j=j+1;
+    end
+    i=i+1;
+end
+
+srt=fft(P_img);
+for r=1:100;
+sr(r)=sum(abs(Srt(r+1,:)));
+end
+figure(1);
+bar(sr)
+xlabel('radius')
+ylabel('features')
