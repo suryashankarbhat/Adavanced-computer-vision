@@ -39,8 +39,8 @@ for i = 1:numel(files)
 end
 mean(k)
 std(k)
-figure
+plot(k)
 xlabel('total images')
 ylabel('dice score')
-plot(k);
+
    
