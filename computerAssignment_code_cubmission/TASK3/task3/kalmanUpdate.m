@@ -11,7 +11,7 @@ K = P * H' * inv(S); % Kalman gain
 zp = H * x; % predicted observation
 %%%%%%%%% UNCOMMENT FOR VALIDATION GATING %%%%%%%%%%
 gate = (z - zp)' * inv(S) * (z - zp);
- if gate > 12
+ if gate >55
   warning('Observation outside validation gate');
  xe = x;
   Pe = P;
